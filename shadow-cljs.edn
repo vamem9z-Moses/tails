@@ -7,7 +7,7 @@
 
  :builds {:app {:target :browser
                 :target-path "target/cljsbuild/public/js"
-                :output-dir "resources/public/js"
+                :output-dir "build/public/js"
                 :asset-path "/js"
                 
                 :modules {:main 
@@ -19,5 +19,5 @@
                        :autorun true}
                 
                 :devtools {:after-load tails.core/main
-                           :http-root "resources/public"
+                           :http-root "build/public"
                            :http-port 3000}}}}

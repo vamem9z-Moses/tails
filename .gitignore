@@ -13,7 +13,5 @@ pom.xml.asc
 .cpcache
 .shadow-cljs
 /node_modules
-/resources/public/js/cljs-runtime
-/resources/public/js/main.js
-/resources/public/manifest.edn
 .nrepl-history
+/build

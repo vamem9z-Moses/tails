@@ -1,44 +1,42 @@
 # tails
 
-FIXME: description
+tails is a template for building apps with a clojurescript SPA and clojure server.
+I've liberally borrowed from Michael McClintock's  [tailwind-css shadow-cljs example](https://github.com/mrmcc3/tailwind-cljs-example/tree/master/shadow-cljs). This was born out of
+my need to understand the leiningen configuration created by [Luminus](https://luminusweb.com/).
+I'm extremely grateful for Luminus because it helped me to get started without
+having to learn the much about clojure's build systems.  However, as I became more
+comfortable with the ecosystem, I found myself really struggling to decipher everything
+included in the project.clj that the template provided.  Ultimately, I wanted a build
+system that was composable and simple like the rest of my clojure code.
 
-## Installation
+Of course this was a challenge because I needed to incorporate html and css handling
+while embracing  the javascript ecosystem. This led me to the following setup:
 
-Download from http://example.com/FIXME.
+1. tools.deps and deps.edn with liberal use of aliases to manage clojure and clojurscript dependies
 
-## Usage
+2. shadow-cljs to manage javascript builds
 
-FIXME: explanation
+3. tailwindcss, purgecss and cleancss to manage css builds
 
-    $ java -jar tails-0.1.0-standalone.jar [args]
+4. and, make to tie it all together. I think of make as the ui for the build system. It's tasks are written as composable functions.
 
-## Options
+I selected tailwindcss as the css framework because of its embace of functional css.
+As someone who has done some frontend javascript, but is not an expert by any means,
+I like the idea of building the frontend using the same mental approaches as
+the rest of the application.
 
-FIXME: listing of options this app accepts.
+## Getting started
 
-## Examples
+### Requirements
 
-...
+1. NodeJS and npm
 
-### Bugs
+1. Make
 
-...
+1. Clojure CLI
 
-### Any Other Sections
-### That You Think
-### Might be Useful
-
-## License
-
-Copyright © 2020 FIXME
-
-This program and the accompanying materials are made available under the
-terms of the Eclipse Public License 2.0 which is available at
-http://www.eclipse.org/legal/epl-2.0.
-
-This Source Code may also be made available under the following Secondary
-Licenses when the conditions for such availability set forth in the Eclipse
-Public License, v. 2.0 are satisfied: GNU General Public License as published by
-the Free Software Foundation, either version 2 of the License, or (at your
-option) any later version, with the GNU Classpath Exception which is available
-at https://www.gnu.org/software/classpath/license.html.
+Once the requirements are installed, run the bootstrap task `make bootstrap`.
+This will install all of the necessary libraries. Once they are installed run
+`make watch-app`, which will start-up the frontend application.  I didn't add a
+clojure server, but there is a basic backend that can be started in a repl with
+the command `make server-repl`.
