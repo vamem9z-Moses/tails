@@ -1,0 +1,23 @@
+  
+{
+
+ :deps {:aliases [:clj-1.10.1 :cljs-1.10.758 :cljs-app :dev :cljs-dev]}
+ 
+ :nrepl {:port 7004}
+
+ :builds {:app {:target :browser
+                :target-path "target/cljsbuild/public/js"
+                :output-dir "resources/public/js"
+                :asset-path "/js"
+                
+                :modules {:main 
+                          {:entries [tails.core]
+                           :init-fn tails.core/main}}
+                
+                :test {:target :node-test
+                       :output-to "target/test/test.js"
+                       :autorun true}
+                
+                :devtools {:after-load tails.core/main
+                           :http-root "resources/public"
+                           :http-port 3000}}}}
