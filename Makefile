@@ -3,7 +3,7 @@ public = build/public
 
 # setup tasks
 bootstrap:
-	npx install 
+	npm install 
 
 # server tasks
 server-test:
