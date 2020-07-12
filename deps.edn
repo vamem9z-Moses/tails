@@ -24,9 +24,9 @@
 
   :dev {:extra-deps {clj-kondo {:mvn/version "RELEASE"}}}
 
-  :clj-dev {}
+  :dev-clj {}
 
-  :cljs-dev {:extra-deps {binaryage/devtools {:mvn/version "1.0.2"}}}
+  :dev-cljs {:extra-deps {binaryage/devtools {:mvn/version "1.0.2"}}}
 
   ;; server repl starts on port 7002
   :cider-clj {:extra-deps {cider/cider-nrepl {:mvn/version "0.25.2"}}

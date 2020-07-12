@@ -42,7 +42,7 @@ create-build-dirs:
 # dev tasks
 ## cljs repl - not embedded in the app
 cljs-app-repl:
-	clj -A:clj-1.10.1:cljs-1.10.758:cljs-app:dev:cljs-dev:cider-cljs
+	clj -A:clj-1.10.1:cljs-1.10.758:cljs-app:dev:dev-cljs:cider-cljs
 
 server-repl:
 	clj -A:clj-1.10.1:clj-server:clj-server-test:dev:cider-clj
