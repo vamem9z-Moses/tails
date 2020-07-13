@@ -1,7 +1,14 @@
   
 {
-
- :deps {:aliases [:clj-1.10.1 :cljs-1.10.758 :cljs-app :dev :cljs-dev]}
+;; Clj dependencies are used to run the embedded repl for the backend server
+;; This is needed because calva does not support connecting to multiple repls
+;; The work around is to use the clj and cljs repl that are started by embedded
+;; nrepl in shadow-cljs
+;; The settings.json file in .vscode will connect to a server and cljs repl and
+;; and run the start fn in the env/dev/clj/user namespace when connecting with
+;; calva
+ :deps {:aliases [:clj-1.10.1 :cljs-1.10.758 :cljs-app :dev :dev-clj :dev-cljs
+                  :clj-server-test :cider-clj :cider-cljs]}
  
  :nrepl {:port 7004}
 

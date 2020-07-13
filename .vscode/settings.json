@@ -1,0 +1,36 @@
+{
+    "calva.customREPLCommandSnippets": [
+        {
+            "name": "Start Server",
+            "ns": "user",
+            "repl": "clj",
+            "snippet": "(start)"
+        },
+        {
+            "name": "Stop Server",
+            "ns": "user",
+            "repl": "clj",
+            "snippet": "(stop)"
+        },
+        {
+            "name": "Restart Server",
+            "ns": "user",
+            "repl": "clj",
+            "snippet": "(restart)"
+        }
+    ],
+    "calva.replConnectSequences": [
+        {
+            "name": "Server only",
+            "projectType": "Clojure CLI",
+            "afterCLJReplJackInCode": "(start)",
+            "cljsType": "none",
+        },
+        {
+            "name": "Server + Client",
+            "projectType": "shadow-cljs",
+            "afterCLJReplJackInCode": "(start)",
+            "cljsType": "shadow-cljs",
+        }
+    ]
+}
