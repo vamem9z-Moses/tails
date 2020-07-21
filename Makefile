@@ -60,7 +60,7 @@ release-server:
 release-css: tailwind-css purge-css clean-css
 
 release-shadow-app:
-	npx shadow-clsj release app
+	npx shadow-cljs release app
 
 release-app: release-css release-shadow-app sanitize-build
 
