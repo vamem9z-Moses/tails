@@ -15,7 +15,7 @@
  :builds {:app {:target :browser
                 :target-path "target/cljsbuild/public/js"
                 :output-dir "build/public/js"
-                :asset-path "/js"
+                :asset-path "js"
                 
                 :modules {:main 
                           {:entries [tails.core]

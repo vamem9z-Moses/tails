@@ -23,8 +23,8 @@ copy-static-assets: copy-html
 tailwind-css:
 	npx tailwind build resources/src/css/styles.css -o ${public}/css/styles.css
 
-purge-css:
-	npx purgecss -c purgecss.config.js -o ${public}/css
+postcss: 
+	npx postcss resources/src/css/styles.css -o ${public}/css/styles.css
 
 clean-css:
 	npx cleancss -o ${public}/css/styles.css ${public}/css/styles.css
@@ -57,12 +57,12 @@ server-repl:
 release-server:
 	clj -A:clj-1.10.1:clj-server:depstar -m hf.depstar.jar build/server/tails.jar
 
-release-css: tailwind-css purge-css clean-css
+release-css: postcss clean-css
 
 release-shadow-app:
 	npx shadow-cljs release app
 
-release-app: release-css release-shadow-app sanitize-build
+release-app: create-build-dirs copy-static-assets release-css release-shadow-app sanitize-build
 
 release-all: purge-build release-server release-app
 
