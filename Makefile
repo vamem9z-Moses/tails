@@ -1,4 +1,3 @@
-
 public = build/public
 
 # setup tasks
@@ -7,7 +6,7 @@ bootstrap:
 
 # server tasks
 server-test:
-	clj -A:clj-1.10.1:clj-server:clj-server-test --m cognitect.test-runner
+	clj -M:clj-1.10.1:clj-server:clj-cljs:dev-clj:test-clj -m cognitect.test-runner
 
 # cljs app tasks
 app-test:
@@ -45,31 +44,30 @@ watch-css: tailwind-css
 watch-shadow-app: copy-html
 	npx shadow-cljs watch app
 
-## starts an embedded repl
 watch-app: purge-build-dir watch-css watch-shadow-app
 
 cljs-repl: watch-app
 
 server-repl:
-	clj -A:clj-1.10.1:clj-server:clj-server-test:dev:cider-clj -m nrepl.cmdline -p 7002 --middleware "[cider.nrepl/cider-middleware]"
+	clj -M:clj-1.10.1:clj-server:test-clj:clj-cljs:dev:dev-clj:cider-clj -m nrepl.cmdline -p 7002 --middleware "[cider.nrepl/cider-middleware]"
 
 # release tasks
 release-server:
-	clj -A:clj-1.10.1:clj-server:depstar -m hf.depstar.jar build/server/tails.jar
+	clj -M:clj-1.10.1:clj-server:depstar -m hf.depstar.jar build/server/workman.jar
 
 release-css: postcss clean-css
 
 release-shadow-app:
 	npx shadow-cljs release app
 
-release-app: create-build-dirs copy-static-assets release-css release-shadow-app sanitize-build
+release-app: purge-build-dir create-build-dirs copy-static-assets release-css release-shadow-app sanitize-build
 
-release-all: purge-build release-server release-app
+release-all: release-server release-app
 
 # task to check to see if libraries in use are outdated
 ## the "-" allows make to ignore warning caused by Java 11
 check-clj-outdated:
-	-clj -A:clj-1.10.1:outdated -m antq.core 
+	-clj -M:clj-1.10.1:outdated -m antq.core
 
 check-npm-outdated:
 	npm outdated
