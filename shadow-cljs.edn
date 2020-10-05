@@ -8,7 +8,7 @@
 ;; and run the start fn in the env/dev/clj/user namespace when connecting with
 ;; calva
  :deps {:aliases [:clj-1.10.1 :cljs-1.10.758 :cljs-app :dev :dev-clj :dev-cljs
-                  :clj-server-test :cider-clj :cider-cljs]}
+                  :test-clj :test-cljs :cider-clj :cider-cljs]}
  
  :nrepl {:port 7004}
 
