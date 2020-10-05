@@ -40,7 +40,7 @@
                           markdown-clj/markdown-clj {:mvn/version "1.10.5"}
                           reagent/reagent {:mvn/version "0.10.0"}
                           re-frame/re-frame {:mvn/version "0.12.0"}
-                          thheller/shadow-cljs {:mvn/version "2.10.14"}}
+                          thheller/shadow-cljs {:mvn/version "2.11.4"}}
              :extra-paths ["src/cljs"]}
 
   :dev {:extra-deps {clj-kondo/clj-kondo {:mvn/version "RELEASE"}
@@ -48,7 +48,6 @@
 
   :dev-clj {:extra-deps {pjstadig/humane-test-output {:mvn/version "0.10.0"}
                          prone/prone {:mvn/version "2020-01-17"}
-
                          ring/ring-devel {:mvn/version "1.8.1"}
                          ring/ring-mock {:mvn/version "0.4.0"}}
             :extra-paths ["env/dev/clj" "env/dev/resources"]
@@ -59,16 +58,16 @@
              :extra-paths ["env/dev/cljs" "test/cljs"]}
 
   :test-clj {:extra-paths ["test/clj" "test/cljc" "env/test/resources"]
-             :extra-deps {nrepl/nrepl {:mvn/version "0.7.0"}
+             :extra-deps {nrepl/nrepl {:mvn/version "0.8.2"}
                           com.cognitect/test-runner
                           {:git/url "https://github.com/cognitect-labs/test-runner.git"
                            :sha "209b64504cb3bd3b99ecfec7937b358a879f55c1"}}}
 
   :test-cljs {:extra-paths ["test/cljs"]}
 
-  :cider-clj {:extra-deps {cider/cider-nrepl {:mvn/version "0.25.2"}}}
+  :cider-clj {:extra-deps {cider/cider-nrepl {:mvn/version "0.25.3"}}}
 
-  :cider-cljs {:extra-deps {cider/piggieback {:mvn/version "0.5.0"}}}
+  :cider-cljs {:extra-deps {cider/piggieback {:mvn/version "0.5.1"}}}
 
   :depstar {:extra-paths ["env/prod/clj"  "env/prod/cljs" "env/prod/resources"]
             :extra-deps {seancorfield/depstar {:mvn/version "1.0.94"}}}
