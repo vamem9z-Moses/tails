@@ -7,48 +7,50 @@
   :clj-1.9.0 {:override-deps {org.clojure/clojure {:mvn/version "1.9.0"}}}
 
   :cljs-1.10.758 {:override-deps {org.clojure/clojurescript {:mvn/version "1.10.758"}}}
+  
+  :clj-logger {:extra-deps {org.slf4j/slf4j-simple {:mvn/version "1.7.30"}}}
 
   :clj-server {:extra-deps {buddy/buddy-auth  {:mvn/version "2.2.0"}
-                            buddy/buddy-core {:mvn/version "1.6.0"}
-                            buddy/buddy-hashers {:mvn/version "1.4.0"}
-                            buddy/buddy-sign {:mvn/version "3.1.0"}
+                            buddy/buddy-core {:mvn/version "1.8.0"}
+                            buddy/buddy-hashers {:mvn/version "1.6.0"}
+                            buddy/buddy-sign {:mvn/version "3.2.0"}
                             cheshire/cheshire {:mvn/version "5.10.0"}
                             clojure.java-time/clojure.java-time {:mvn/version "0.3.2"}
                             com.cognitect/transit-clj {:mvn/version "1.0.324"}
                             cprop/cprop {:mvn/version "0.1.17"}
                             luminus-immutant/luminus-immutant {:mvn/version "0.2.5"}
-                            metosin/jsonista {:mvn/version "0.2.6"}
+                            metosin/jsonista {:mvn/version "0.2.7"}
                             metosin/ring-http-response {:mvn/version "0.9.1"}
                             mount/mount {:mvn/version "0.1.16"}
                             org.clojure/tools.cli {:mvn/version "1.0.194"}
                             org.clojure/tools.logging {:mvn/version "1.1.0"}
-                            ring/ring-core {:mvn/version "1.8.1"}
+                            ring/ring-core {:mvn/version "1.8.2"}
                             ring/ring-defaults {:mvn/version "0.3.2"}
                             juxt/crux-core {:mvn/version "20.07-1.9.2-beta"}
                             juxt/crux-rocksdb {:mvn/version "20.07-1.9.2-beta"}
                             juxt/crux-jdbc {:mvn/version "20.07-1.9.2-beta"}
-                            org.postgresql/postgresql {:mvn/version "42.2.14"}
+                            org.postgresql/postgresql {:mvn/version "42.2.16"}
                             com.taoensso/tempura {:mvn/version "1.2.1"}}
                :replace-paths ["src/clj" "src/cljc" "resources"]}
 
   :clj-cljs {:extra-deps {funcool/struct {:mvn/version "1.4.0"}
-                          metosin/reitit {:mvn/version "0.5.3"}
+                          metosin/reitit {:mvn/version "0.5.6"}
                           luminus-transit/luminus-transit {:mvn/version "0.1.2"}}}
 
-  :cljs-app {:extra-deps {cljs-ajax/cljs-ajax {:mvn/version "0.8.0"}
-                          day8.re-frame/http-fx {:mvn/version "0.1.6"}
+  :cljs-app {:extra-deps {cljs-ajax/cljs-ajax {:mvn/version "0.8.1"}
+                          day8.re-frame/http-fx {:mvn/version "0.2.1"}
                           markdown-clj/markdown-clj {:mvn/version "1.10.5"}
                           reagent/reagent {:mvn/version "0.10.0"}
-                          re-frame/re-frame {:mvn/version "0.12.0"}
+                          re-frame/re-frame {:mvn/version "1.1.1"}
                           thheller/shadow-cljs {:mvn/version "2.11.4"}}
              :extra-paths ["src/cljs"]}
 
   :dev {:extra-deps {clj-kondo/clj-kondo {:mvn/version "RELEASE"}
-                     expound/expound {:mvn/version "0.8.5"}}}
+                     expound/expound {:mvn/version "0.8.6"}}}
 
   :dev-clj {:extra-deps {pjstadig/humane-test-output {:mvn/version "0.10.0"}
                          prone/prone {:mvn/version "2020-01-17"}
-                         ring/ring-devel {:mvn/version "1.8.1"}
+                         ring/ring-devel {:mvn/version "1.8.2"}
                          ring/ring-mock {:mvn/version "0.4.0"}}
             :extra-paths ["env/dev/clj" "env/dev/resources"]
             :jvm-opts ["-Dconf=dev-config.edn"]}
@@ -61,7 +63,7 @@
              :extra-deps {nrepl/nrepl {:mvn/version "0.8.2"}
                           com.cognitect/test-runner
                           {:git/url "https://github.com/cognitect-labs/test-runner.git"
-                           :sha "209b64504cb3bd3b99ecfec7937b358a879f55c1"}}}
+                           :sha "b6b3193fcc42659d7e46ecd1884a228993441182"}}}
 
   :test-cljs {:extra-paths ["test/cljs"]}
 
@@ -70,6 +72,6 @@
   :cider-cljs {:extra-deps {cider/piggieback {:mvn/version "0.5.1"}}}
 
   :depstar {:extra-paths ["env/prod/clj"  "env/prod/cljs" "env/prod/resources"]
-            :extra-deps {seancorfield/depstar {:mvn/version "1.0.94"}}}
+            :extra-deps {seancorfield/depstar {:mvn/version "1.1.117"}}}
 
   :outdated {:extra-deps {antq/antq {:mvn/version "RELEASE"}}}}}

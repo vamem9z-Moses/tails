@@ -67,7 +67,7 @@ release-all: release-server release-app
 # task to check to see if libraries in use are outdated
 ## the "-" allows make to ignore warning caused by Java 11
 check-clj-outdated:
-	-clj -M:clj-1.10.1:outdated -m antq.core
+	-clj -M:clj-logger:clj-1.10.1:outdated -m antq.core
 
 check-npm-outdated:
 	npm outdated
