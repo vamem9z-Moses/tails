@@ -26,15 +26,15 @@
                             org.clojure/tools.logging {:mvn/version "1.1.0"}
                             ring/ring-core {:mvn/version "1.8.2"}
                             ring/ring-defaults {:mvn/version "0.3.2"}
-                            juxt/crux-core {:mvn/version "20.07-1.9.2-beta"}
-                            juxt/crux-rocksdb {:mvn/version "20.07-1.9.2-beta"}
-                            juxt/crux-jdbc {:mvn/version "20.07-1.9.2-beta"}
-                            org.postgresql/postgresql {:mvn/version "42.2.16"}
+                            juxt/crux-core {:mvn/version "20.09-1.12.1-beta"}
+                            juxt/crux-rocksdb {:mvn/version "20.09-1.12.1-beta"}
+                            juxt/crux-jdbc {:mvn/version "20.09-1.12.1-beta"}
+                            org.postgresql/postgresql {:mvn/version "42.2.18"}
                             com.taoensso/tempura {:mvn/version "1.2.1"}}
                :replace-paths ["src/clj" "src/cljc" "resources"]}
 
   :clj-cljs {:extra-deps {funcool/struct {:mvn/version "1.4.0"}
-                          metosin/reitit {:mvn/version "0.5.6"}
+                          metosin/reitit {:mvn/version "0.5.9"}
                           luminus-transit/luminus-transit {:mvn/version "0.1.2"}}}
 
   :cljs-app {:extra-deps {cljs-ajax/cljs-ajax {:mvn/version "0.8.1"}
@@ -42,7 +42,7 @@
                           markdown-clj/markdown-clj {:mvn/version "1.10.5"}
                           reagent/reagent {:mvn/version "0.10.0"}
                           re-frame/re-frame {:mvn/version "1.1.1"}
-                          thheller/shadow-cljs {:mvn/version "2.11.4"}}
+                          thheller/shadow-cljs {:mvn/version "2.11.5"}}
              :extra-paths ["src/cljs"]}
 
   :dev {:extra-deps {clj-kondo/clj-kondo {:mvn/version "RELEASE"}
@@ -67,11 +67,11 @@
 
   :test-cljs {:extra-paths ["test/cljs"]}
 
-  :cider-clj {:extra-deps {cider/cider-nrepl {:mvn/version "0.25.3"}}}
+  :cider-clj {:extra-deps {cider/cider-nrepl {:mvn/version "0.25.4"}}}
 
   :cider-cljs {:extra-deps {cider/piggieback {:mvn/version "0.5.1"}}}
 
   :depstar {:extra-paths ["env/prod/clj"  "env/prod/cljs" "env/prod/resources"]
-            :extra-deps {seancorfield/depstar {:mvn/version "1.1.117"}}}
+            :extra-deps {seancorfield/depstar {:mvn/version "1.1.128"}}}
 
   :outdated {:extra-deps {antq/antq {:mvn/version "RELEASE"}}}}}
